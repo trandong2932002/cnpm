@@ -26,10 +26,7 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 - Nhân viên phải đăng nhập vô trang của nhân viên để sử dụng. Tài khoản của nhân viên được cấp bởi chủ ngân hàng.
 - Nhân viên được xem các thông tin cá nhân của khách hàng và thông tin số dư, nợ, ...
 - Nhân viên có thể sửa các thông tin cá nhân của khách hàng nếu được khách hàng cho phép.
-
-### Phần dành cho nhân viên chăm sóc khách hàng
-
-- Nhân viên chăm sóc khách hàng sẽ thấy được các tin nhắn của khách hàng gửi tới, hoặc cuộc gọi của khách hàng gọi.
+- Nhân viên sẽ thấy được các tin nhắn của khách hàng gửi tới, hoặc cuộc gọi của khách hàng gọi (chăm sóc khách hàng).
 
 ### Phần dành cho chủ ngân hàng
 
@@ -38,9 +35,9 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 - Chủ ngân hàng được xem các hoạt động của ngân hàng.
 - Chủ ngân hàng được chỉnh sửa các thông tin về lãi suất của ngân hàng.
 
-## Use Case
+## Use Case Modelling
 
-![alt](./use_case.svg)
+![alt](./diagrams/use_case.svg)
 
 ## Mô tả Use Case
 
@@ -163,3 +160,7 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Main Flow** | Đối với chat, sau khi nhận được yêu cầu chat từ khách hàng<br>1. Chọn khách hàng trong danh sách khách hàng đang chờ được tư vấn <br>2. Sau khi tư vấn, nhân viên chọn “Kết thúc” để kết thúc phiên tư vấn |
 | **Alternative Flows** | Không |
 | **Exception Flows** | Khách hàng/nhân viên thoát ra
+
+## Conceptual Modelling (Class Diagram)
+
+![alt](./diagrams/class_diagram.svg)
