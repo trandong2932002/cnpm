@@ -8,31 +8,37 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 
 ### Phần dành cho khách vãng lai
 
-- khách vãng lai có thể xem các thông tin về ngân hàng như: các thông tin khi đăng ký tài khoản, các dịch vụ ưu đãi.
-- khách vãng lai phải đăng ký tài khoản để sử dụng các tính năng của ngân hàng. Sau khi đăng ký, khách vãng lai trở thành người dùng.
+- Khách vãng lai có thể xem các thông tin về ngân hàng như: các thông tin khi đăng ký tài khoản, các dịch vụ ưu đãi, thông tin về lãi suất.
+- Khách vãng lai phải đăng ký tài khoản để sử dụng các tính năng của ngân hàng. Sau khi đăng ký, khách vãng lai trở thành người dùng.
 - Khi có thắc mắc, khách vãng lai có thể bấm vô nút "Chăm sóc khách hàng" để liên hệ với bộ phận chăm sóc khách hàng thông quan ô chat, hoặc nguời dùng vãng lai gọi điện trực tiếp tới số diện thoại được ghi trên trang.
 
 ### Phần dành cho người dùng
 
+- Người dùng được xem mọi thông tin mà khách vãng lai xem được, và có thể liên hệ với bộ phân chăm sóc khách hàng.
 - Người dùng được cấp mọt dãy số gọi là số tài khoản. Mọi giao dịch đều dựa trên số tài khoản này.
 - Người dùng có thể chỉnh sửa thông tin tài khoản, đăng xuất.
-- Để nạp tiền từ ngân hàng liên kết vào tài khoản của mình, người dùng bấm vô phần **Nạp tiền** và thực hiện các yêu cầu.
+- Để nạp tiền, người dùng mang tiền đến cho nhân viên ngân hàng nhờ nạp hộ.
 - Để chuyển tiền cho người khác, người dùng bấm vô phần **Chuyển khoản** và thực hiện các yêu cầu.
 - Đẻ thanh toán hoá dơn điện nước của các công ty có liên kết, người dùng bấm vô phần **Thanh toán hoá đơn** và thực hiện các yêu cầu.
 - Để gửi tiết kiệm, người dùng bấm vô phần **Gửi tiết kiệm** và thực hiện các yêu cầu.
+- Để vay tiền, người dùng bấm vô phần **Tạo khoản vay** và thực hiện các yêu cầu.
+- Để xem lịch sử giao dịch, người dùng bấm vô phần **Lịch sử giao dịch**.
+- Để sao kê tài khoản, người dùng bấm vô phần **Lịch sử giao dịch**, bấm vô phần **Sao kê** và thực hiện các yêu cầu.
 
 ### Phần dành cho nhân viên
 
 - Nhân viên phải đăng nhập vô trang của nhân viên để sử dụng. Tài khoản của nhân viên được cấp bởi chủ ngân hàng.
-- Nhân viên được xem các thông tin cá nhân của khách hàng và thông tin số dư, nợ, ...
-- Nhân viên có thể sửa các thông tin cá nhân của khách hàng nếu được khách hàng cho phép.
+- Nhân viên được xem các thông tin cá nhân của người dùng và thông tin số dư, nợ, lịch sử giao dịch; và có thể sửa các thông tin cá nhân của người dùng hoặc sao kê nếu được người dùng cho phép.
+- Nhân viên nạp tiền hộ khách hàng.
+- Nhân viên có thể thực hiện giao dịch hộ người dùng (chuyển khoản, thanh toán hoá đơn, gửi tiết kiệm) nếu được người dùng cho phép.
+- Nhân viên tạo khoản vay hộ khách hàng nếu phù hợp với các điều kiện của ngân hàng.
 - Nhân viên sẽ thấy được các tin nhắn của khách hàng gửi tới, hoặc cuộc gọi của khách hàng gọi (chăm sóc khách hàng).
 
 ### Phần dành cho chủ ngân hàng
 
 - Chủ ngân hàng có thể đăng nhập vô trang của nhân viên (chủ ngân hàng có toàn quyền của nhân viên) hoặc trang của của ngân hàng để sử dụng.
-- Chủ ngân hàng có toàn quyền quản lý nhân viên và khách hàng.
-- Chủ ngân hàng được xem các hoạt động của ngân hàng.
+- Chủ ngân hàng có toàn quyền quản lý nhân viên và người dùng.
+- Chủ ngân hàng được xem các hoạt động của ngân hàng như tổng tiền gửi, tổng tiền cho vay.
 - Chủ ngân hàng được chỉnh sửa các thông tin về lãi suất của ngân hàng.
 
 ## Use Case Modelling
