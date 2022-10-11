@@ -54,6 +54,8 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 
 ### Phần của khách vãng lai
 
+<details><summary>Bảng mô tả</summary>
+
 | **Use Case** | Đăng ký tài khoản |
 |---|---|
 | **Actors** | Khách vãng lai |
@@ -74,7 +76,11 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Alternative Flows** | Không |
 | **Exception Flows** | 1. Người dùng thoát ra<br>2. Tài khoản không tồn tại hoặc mật khẩu không đúng<br>3. Xác thực không hoàn tất |
 
+</details>
+
 ### Phần của khách vãng lai và người dùng
+
+<details><summary>Bảng mô tả</summary>
 
 | **Use Case** | Xem các thông tin về ngân hàng |
 |---|---|
@@ -96,7 +102,11 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Alternative Flows** | Khi người dùng nhận được thông báo lỗi trong quá trình sử dụng, sẽ có thông báo *Liên hệ với bộ phận chăm sóc khách hàng kèm với thông báo lỗi*, người dùng bấm vô **Liên hệ** sẽ đi đến trang chat |
 | **Exception Flows** | Đối với trang chat, người dùng tắt hoặc bấm **Kết thúc** |
 
+</details>
+
 ### Phần của người dùng
+
+<details><summary>Bảng mô tả</summary>
 
 | **Use Case** | Đăng xuất |
 |---|---|
@@ -159,7 +169,7 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Description** | Vay tiền với lãi suất ưu đãi |
 | **Pre-Conditions** | Đã đăng nhập |
 | **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Khác**  <br>2. Chọn **Tạo khoản vay**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực<br>4. Sau khi tạo, người dùng được chọn cách liên hệ (số điện thoại/chat) và nhân viên sẽ liên hệ để thương lượng về khoản vay và thế chấp<br>5. Nếu được ngân hàng đánh giá là đạt, khoản vay được thông qua và người dùng nhận được tiền |
+| **Main Flow** | 1. Chọn **Khác**  <br>2. Chọn **Tạo khoản vay**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực<br>4. Sau bkhi tạo, người dùng được chọn cách liên hệ (số điện thoại/chat) và nhân viên sẽ liên hệ để thương lượng về khoản vay và thế chấp<br>5. Nếu được ngân hàng đánh giá là đạt, khoản vay được thông qua và người dùng nhận được tiền |
 | **Alternative Flows** | Không |
 | **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất<br>3. Khoản vay không được thông qua |
 
@@ -173,7 +183,11 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Alternative Flows** | Không |
 | **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất |
 
+</details>
+
 ### Phần của nhân viên
+
+<details><summary>Bảng mô tả</summary>
 
 | **Use Case** | Tiếp nhận liên hệ của khách hàng |
 |---|---|
@@ -245,7 +259,11 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Alternative Flows** | Không |
 | **Exception Flows** | Nhân viên thoát ra |
 
+</details>
+
 ### Phần của chủ
+
+<details><summary>Bảng mô tả</summary>
 
 | **Use Case** | Quản lý nhân viên |
 |---|---|
@@ -286,6 +304,8 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Main Flow** | 1. Chọn **Hệ thống ngân hàng**<br>2. Chọn **Lãi suất** và sửa |
 | **Alternative Flows** | Không |
 | **Exception Flows** | Không |
+
+</details>
 
 ## Conceptual Modelling (Class Diagram)
 
