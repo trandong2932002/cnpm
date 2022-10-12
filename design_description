@@ -1,0 +1,54 @@
+[trang chủ]
+Nút:
+    [Đăng ký]
+    [Đăng nhập]
+    Trang chủ
+    [Liên hệ cskh]
+Nội dung:    
+    Thông tin về dịch vụ (slide ảnh chạy trên trang chủ)
+    Thành viên trong nhóm
+
+
+# Số dư nằm ở các mục liên quan đến giao dịch
+[người dùng] sau khi đăng nhập
+Nút:
+    Bao gồm trang chủ, không có đăng ký và đăng nhập
+    biểu tượng tài khoản > [thông tin]/đăng xuất
+    [chuyển khoản]
+    [thanh toán hoá đơn]
+    [gửi tiết kiệm]
+    [tạo khoản vay]
+    [lịch sử giao dịch > sao kê]
+Nội dung:
+    Không có thành viên nhóm
+    trang thông tin cá nhân: hiển thị tất cả thông tin cá nhân
+    trang chuyển khoản, thanh toán hoá đơn
+    trang gửi tiết kiệm: chọn khoản gủi tiết kiệm -> một số loại gửi tiết kiệm (lãi suất) -> chọn số tiền, gửi
+    trang tạo khoản vat: nhập tiền -> vay
+    trang lịch sử giao dịch: bảng hiển thị tất cả giao dịch
+[nhân viên]
+Nút:
+    nút home
+    nút danh sách khách hàng chờ tư vấn
+    Thanh bên trái:
+        Thông tin người dùng
+        nạp tiền cho người dùng
+        thanh toán hộ
+        gửi tiết kiệm
+        tạo khoản vay
+        lịch sử giao dịch
+Nội dung:
+    trang chủ: 
+    Thông tin người dùng: nhập tài khoản người dùng, bấm nút tiếp tục, sẽ hiện ra trang xem/sửa thông tin người dùng
+    nạp tiền cho người dùng: ô nhập tài khoản và ô nhập số tiền, bấm nút nạp
+    thanh toán hộ: trang giao dịch của người dùng + ô nhập tài khoản
+    gửi tiết kiệm: trang gửi tiết kiệm của người dùng + ô nhập tài khoản
+    xem lịch sử giao dịch, sao kê
+[chủ]
+Nút:
+    nút home
+    Thanh bên trái:
+        quản lý nv
+        quản lý người dùng
+        xem các lịch sử giao dịch
+        chỉnh sửa thông tin về lãi suất
