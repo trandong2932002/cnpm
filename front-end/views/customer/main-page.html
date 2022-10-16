@@ -7,33 +7,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang Chủ</title>
 
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
-  <script src="./bootstrap/js/bootstrap.bundle.js"></script>
+  <link rel="stylesheet" href="/assets/styles/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/styles/codicons/codicon.css">
+  <link rel="stylesheet" href="/assets/styles/codicons/codicon.ttf">
+
+  <script src="/assets/scripts/bootstrap/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-md sticky-top" style="background-color: #e3f2fd;">
-    <div class=" container-fluid">
-    <a class="navbar-brand" href="#">[LOGO]</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="./main-page.html">Trang chủ</a></li>
-        <li class="nav-item"><a class="nav-link" href="./codicons/">CSKH</a></li>
-      </ul>
-      <div class="d-md-flex justify-content-md-end flex-grow-1">
+<body class="bg-light">
+  <nav class="navbar navbar-expand-md sticky-top shadow bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">[LOGO]</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="./sign-up-basic-information.html">Đăng ký</a></li>
-          <li class="nav-item"><a class="nav-link" href="./sign-in.html">Đăng nhập</a></li>
+          <li class="nav-item"><a href="/views/customer/main-page.html" class="nav-link">Trang chủ</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">CSKH</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Chuyển khoản</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Thanh toán hoá đơn</a></li>
+          <li class="nav-item"><a href="/views/customer/savings/savings.html" class="nav-link">Gửi tiết kiệm</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Tạo khoản vay</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Lịch sử</a></li>
         </ul>
+        <div class="d-md-flex justify-content-md-end flex-grow-1">
+          <div class="d-md-inline d-none dropdown-center">
+            <div class="codicon codicon-account fs-2 d-none d-md-block" data-bs-toggle="dropdown"></div>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a href="/views/customer/customer-information/change-information.html" class="dropdown-item">Thông tin cá nhân</a></li>
+              <li><a href="/views/customer/customer-information/change-password.html" class="dropdown-item">Đổi mật khẩu</a></li>
+              <li><a href="/views/guest/main-page.html" class="dropdown-item">Đăng xuất</a></li>
+            </ul>
+          </div>
+          <div class="d-md-none d-inline">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="./customer-information/change-information.html" class="nav-link">Thông tin cá nhân</a></li>
+              <li class="nav-item"><a href="./customer-information/change-password.html" class="nav-link">Đổi mật khẩu</a></li>
+              <li class="nav-item"><a href="/views/guest/main-page.html" class="nav-link">Đăng xuất</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   </nav>
 
-  <section class="vh-85" id="basic-information">
+  <section class="vh-85" id="main-advertisement">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
@@ -80,51 +99,6 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
-  </section>
-
-  <section class="vh-100" id="development-team">
-    <h2 class="d-flex justify-content-center py-5">Nhóm phát triển</h2>
-    <div class="container">
-      <div class="row g-5 justify-content-center">
-
-        <div class="col-lg-3 col-md-6 col-8">
-          <div class="card">
-            <img src="./images/favicon/android-chrome-192x192.png" alt="" class="card-img-top">
-            <div class="card-body">
-              <div class="card-text">Trần Đông<br>20133035</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-8">
-          <div class="card">
-            <img src="./images/favicon/android-chrome-192x192.png" alt="" class="card-img-top">
-            <div class="card-body">
-              <div class="card-text">Lê Minh Đăng<br>20133034</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-8">
-          <div class="card">
-            <img src="./images/favicon/android-chrome-192x192.png" alt="" class="card-img-top">
-            <div class="card-body">
-              <div class="card-text">Huỳnh Công Hậu<br>20133039</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-8">
-          <div class="card">
-            <img src="./images/favicon/android-chrome-192x192.png" alt="" class="card-img-top">
-            <div class="card-body">
-              <div class="card-text">Nguyễn Trung Cường<br>20133028</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 </body>
