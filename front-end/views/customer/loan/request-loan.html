@@ -5,13 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thông tin cá nhân</title>
+  <title>Tạo khoản vay</title>
 
   <link rel="stylesheet" href="/assets/styles/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/styles/codicons/codicon.css">
   <link rel="stylesheet" href="/assets/styles/codicons/codicon.ttf">
 
   <script src="/assets/scripts/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/scripts/another/customer/savings/savings.js" defer></script>
 </head>
 
 <body class="bg-light">
@@ -52,43 +53,63 @@
     </div>
   </nav>
 
-  <section id="change-password">
-    <div class="d-sm-flex justify-content-sm-center align-items-sm-center">
+  <section id="create-loan" class="bg-light">
+    <div class="vh-100 d-sm-flex justify-content-sm-center align-items-sm-center">
       <div class="m-sm-5 p-5 shadow">
 
         <div class="mb-3">
-          <span class="h3">Đổi mật khẩu</span>
+          <span class="h3">Tạo yêu cầu vay tiền</span>
         </div>
 
-        <form action="/views/customer/customer-information/change-password.html" method="">
+        <form action="./loan.html" method="">
 
           <div class="mb-2">
-            <label for="old-password" class="form-label">Mật khẩu cũ</label>
-            <div class="input-group">
-              <input type="password" name="old-password" id="" class="form-control">
-              <span class="input-group-text"><i class="codicon codicon-eye"></i></span>
+            <label for="loan-name" class="form-label">Tên khoản vay</label>
+            <input type="text" name="loan-name" id="" class="form-control">
+          </div>
+
+          <div class="mb-2">
+            <label for="loan-purpose" class="form-label">Mục đích vay</label>
+            <input type="text" name="loan-purpose" id="" class="form-control">
+          </div>
+
+          <div class="mb-2">
+            <div class="row">
+              <div class="col-sm-6 mb-sm-0 mb-3">
+                <label for="loan-total-amount" class="form-label">Tổng số vốn thực hiện</label>
+                <input type="text" name="loan-total-amount" id="" class="form-control">
+              </div>
+
+              <div class="col-sm-6">
+                <label for="loan-amount" class="form-label">Đề nghị ngân hàng cho vay</label>
+                <input type="text" name="loan-amount" id="" class="form-control">
+              </div>
             </div>
           </div>
 
           <div class="mb-2">
-            <label for="new-password" class="form-label">Mật khẩu mới</label>
-            <div class="input-group">
-              <input type="password" name="new_password" id="" class="form-control">
-              <span class="input-group-text"><i class="codicon codicon-eye"></i></span>
+            <div class="row">
+              <div class="col-sm-6 mb-sm-0 mb-3">
+                <label for="amount" class="form-label">Vốn tự có</label>
+                <input type="text" name="amount" id="" class="form-control">
+              </div>
+
+              <div class="col-sm-6">
+                <label for="available-amount" class="form-label">Số dư khả dụng</label>
+                <input type="text" name="available-amount" id="" class="form-control">
+              </div>
             </div>
           </div>
 
           <div class="mb-2">
-            <label for="retype-new-password" class="form-label">Nhập lại mật khẩu</label>
-            <div class="input-group">
-              <input type="password" name="retype-new-password" id="" class="form-control">
-              <span class="input-group-text"><i class="codicon codicon-eye"></i></span>
-            </div>
+            <label for="loan-purpose" class="form-label">Thời hạn vay</label>
+            <input type="text" name="loan-purpose" id="" class="form-control">
           </div>
 
           <div class="d-flex justify-content-sm-end justify-content-center mt-3">
-            <button class="btn btn-primary">Sửa</button>
+            <button class="btn btn-primary">Tạo yêu cầu</button>
           </div>
+
         </form>
 
       </div>

@@ -65,7 +65,7 @@ function auto_add_month() {
     let new_d = new Date(d)
     new_d.setMonth(
         new_d.getMonth() + parseInt(
-            term.value.split(" ")[0]
+            term.options[term.selectedIndex].text.split(" ")[0]
         )
     )
     return new_d
