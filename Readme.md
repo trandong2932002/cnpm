@@ -60,20 +60,20 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 |---|---|
 | **Actors** | Khách vãng lai |
 | **Description** | Khách vãng lai đăng ký tài khoản để sử dụng những dịch vụ của ngân hàng |
-| **Pre-Conditions** | Đang ở trang chủ |
-| **Post-Conditions** | Trang đăng nhập |
-| **Main Flow** | 1. Bấm vào nút **Đăng ký**<br>2. Nhập các thông tin cần thiết, bấm **Tiếp theo**<br>3. Sau khi nhập đủ thông tin, bấm **Xác thực** và thực hiện xác thực<br>4. Sau khi xác thực thành công, bấm **Hoàn tất** |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Nhập các thông tin cá nhân đã tồn tại trên hệ thống<br>2. Sai mã xác thực<br>3. Người dùng thoát ra |
+| **Pre-Conditions** | Không có |
+| **Post-Conditions** | Tài khoản được tạo, chuyển đến **Trang đăng nhập** |
+| **Main Flow** | 1. Bấm vào nút **Đăng ký**<br>2. Nhập đầy đủ thông tin, bấm **Tạo** [A1]<br> 3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] [E2] |
+| **Alternative Flows** | [A1] Bấm vào nút **Hủy**<br> Post-Condition: Tài khoản không được tạo, chuyển đến **Trang chủ** |
+| **Exception Flows** | [E1] Nhập các thông tin định danh cá nhân (Vd: email) không hợp lệ hoặc đã tồn tại trên hệ thống<br>[E2] Xác thực không hoàn tất |
 
 | **Use Case** | Đăng nhập |
 |---|---|
 | **Actors** | Khách vãng lai |
-| **Description** | Người dùng đăng nhập để sử dụng tài khoản ngân hàng của mình |
-| **Pre-Conditions** | Đang ở trang chủ |
-| **Post-Conditions** | Trang chủ |
-| **Main Flow** | 1. Bấm vào nút **Đăng nhập**<br>2. Nhập tài khoản, mật khẩu, bấm **Đăng nhập**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
+| **Description** | Khách đã đăng ký tài khoản đăng nhập để sử dụng tài khoản ngân hàng của mình |
+| **Pre-Conditions** | Đã đăng ký tài khoản |
+| **Post-Conditions** | Đăng nhập thành công và chuyển đến **Trang chủ của người dùng** |
+| **Main Flow** | 1. Bấm vào nút **Đăng nhập**<br>2. Nhập tài khoản, mật khẩu, bấm **Đăng nhập** [A1][E1]<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E2] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Đăng nhập không hoàn tất, chuyển đến **Trang chủ** |
 | **Exception Flows** | 1. Người dùng thoát ra<br>2. Tài khoản không tồn tại hoặc mật khẩu không đúng<br>3. Xác thực không hoàn tất |
 
 </details>
@@ -95,12 +95,12 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Use Case** | Liên hệ với bộ phận Chăm sóc khách hàng |
 |---|---|
 | **Actors** | Khách vãng lai, người dùng |
-| **Description** | Liên hệ với bộ phận chăm sóc khách hàng khi người dùng hoặc khách vãng lai có thắc mắc cần liên hệ với ngân hàng để giải đáp |
+| **Description** | Khi người dùng hoặc khách vãng lai có thắc mắc cần liên hệ với ngân hàng để giải đáp |
 | **Pre-Conditions** | Không |
 | **Post-Conditions** | Trang chủ |
-| **Main Flow** | 1. Bấm vào nút **Chăm sóc khách hàng**<br>2. Chọn loại liên hệ (số điện thoại/chat) để liên hệ<br>3. Đối với chat, sau khi liên hệ hoàn tất, bấm vào **Kết thúc** và đánh giá |
-| **Alternative Flows** | Khi người dùng nhận được thông báo lỗi trong quá trình sử dụng, sẽ có thông báo *Liên hệ với bộ phận chăm sóc khách hàng kèm với thông báo lỗi*, người dùng bấm vô **Liên hệ** sẽ đi đến trang chat |
-| **Exception Flows** | Đối với trang chat, người dùng tắt hoặc bấm **Kết thúc** |
+| **Main Flow** | 1. Bấm vào nút **Chăm sóc khách hàng** để chat với bộ phận chăm sóc khách hàng<br>2. Sau khi liên hệ hoàn tất, bấm vào **Kết thúc** và cho đánh giá [A1] |
+| **Alternative Flows** | [A1] Bấm **Thoát**<br> Post-Condition: Vấn đề của khách hàng không được giải quyết, chuyển đến **Trang chủ** |
+| **Exception Flows** | Không có |
 
 </details>
 
@@ -113,75 +113,70 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Actors** | Người dùng |
 | **Description** | Người dùng đăng xuất |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Trang chủ |
-| **Main Flow** | 1. Bám vào biểu tượng tài khoản<br>2. Chọn **Đăng xuất** <br>3. Bấm **Xác nhận**  |
+| **Post-Conditions** | Hệ thống hủy phiên đăng nhập của người dùng và người dùng không còn trong trạng thái đăng nhập nữa |
+| **Main Flow** | 1. Bám vào biểu tượng tài khoản<br>2. Chọn **Đăng xuất** <br>3. Bấm **Xác nhận** [E1]  |
 | **Alternative Flows** | Không |
-| **Exception Flows** | Người dùng bấm **Huỷ** hoặc thoát |
+| **Exception Flows** | [E1] Người dùng bấm **Huỷ** |
 
 | **Use Case** | Xem/sửa thông tin cá nhân |
 |---|---|
 | **Actors** | Người dùng |
 | **Description** | Người dùng có thể thay đổi các thông tin cá nhân của mình bằng tính năng này |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Bấm vào biểu tượng tài khoản<br>2. Chọn **Sửa thông tin cá nhân**<br>3. Thực hiện các thay đổi, bấm **Lưu**<br>4. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Thông tin cá nhân mới trùng với thông tin cũ<br>2. Xác thực không hoàn tất<br>3. Người dùng bấm **Huỷ** hoặc thoát |
-
-| **Use Case** | Nạp tiền |
-|---|---|
-| **Actors** | Người dùng |
-| **Description** | Người dùng nạp tiền vào tài khoảng bằng cách mang tiền đến ngân hàng nhờ nhân viên nạp hộ |
+| **Post-Conditions** | Thông tin cá nhân của người dùng được thay đổi trên hệ thống |
+| **Main Flow** | 1. Bấm vào biểu tượng tài khoản<br>2. Chọn **Sửa thông tin cá nhân**<br>3. Thực hiện các thay đổi, bấm **Lưu** [A1]<br>4. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1][E2] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Thông tin cá nhân của người dùng không được thay đổi, trở về **Trang chủ** |
+| **Exception Flows** | [E1] Thông tin cá nhân mới không hợp lệ hoặc trùng với thông tin cũ hoặc trùng với thông tin của tài khoản khác trong cơ sở sữ liệu<br>[E2] Xác thực không hoàn tất |
 
 | **Use Case** | Chuyển khoản |
 |---|---|
 | **Actors** | Người dùng |
 | **Description** | Người dùng chuyển tiền của mình cho người khác, hoặc thực hiện giao dịch như mua hàng |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Chuyển khoản**<br>2. Nhập số tiền cần chuyển, nhập số tài khoản cần chuyển, bấm **Chuyển**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất<br>3. Số dư không đủ<br>4. Tài khoản chuyển đến không tồn tại |
+| **Post-Conditions** | Yêu cầu chuyển khoản được thực hiện và được hệ thống ghi lại |
+| **Main Flow** | 1. Chọn **Chuyển khoản**<br>2. Nhập số tiền cần chuyển, nhập số tài khoản cần chuyển, bấm **Chuyển** [A1][E1][E2]<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E3] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Giao dịch không được thực hiện |
+| **Exception Flows** | [E1] Số dư không đủ<br> [E2] Tài khoản thụ hưởng không tồn tại<br> [E3] Xác thực không hoàn tất |
 
 | **Use Case** | Thanh toán hoá đơn |
 |---|---|
 | **Actors** | Người dùng |
 | **Description** | Người dùng có thể thanh toán hoá đơn điện, nước nếu công ty cung cấp dịch vụ tương ứng có liên kết với ngân hàng này |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Thanh toán hoá đơn**<br>2. Chọn công ty cung cấp dịch vụ điện/nước, nhập mã khách hàng, bấm **Thanh toán**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất<br>3. Số dư không đủ |
+| **Post-Conditions** | Yêu cầu thanh toán hóa đơn được thực hiện và được hệ thống ghi lại |
+| **Main Flow** | 1. Chọn **Thanh toán hoá đơn**<br>2. Chọn công ty cung cấp dịch vụ điện/nước, nhập mã khách hàng, bấm **Thanh toán** [A1][E1][E2]<br> 3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E3] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Giao dịch không được thực hiện |
+| **Exception Flows** | [E1] Số dư không đủ<br> [E2] Nhà cung cấp dịch vụ thông báo không thể thanh toán (do tài khoản của dịch vụ không tồn tại, hoặc dịch vụ đã được thanh toán nên không còn đơn để thanh toán)<br> [E3] Xác thực không hoàn tất |
 
 | **Use Case** | Gửi tiết kiệm |
 |---|---|
 | **Actors** | Người dùng |
 | **Description** | Gửi tiết kiệm với lãi suất tốt |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Khác**  <br>2. Chọn **Gửi tiết kiệm**<br>3. Chọn loại gửi tiết kiệm (1 tuần, 1 tháng, ...), chọn số tiền, bấm **Gửi tiết kiệm**<br>4. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất<br>3. Số dư không đủ |
+| **Post-Conditions** | Yêu cầu gửi tiết kiệm được thực hiện và được hệ thống ghi lại |
+| **Main Flow** | 1. Chọn **Gửi tiết kiệm**, bấm nút **Tạo khoản gửi tiết kiệm mới**<br>2. Điền đủ thông tin, bấm **Gửi tiết kiệm** [A1][E1]<br>4. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E2] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Khoản gửi tiết kiệm không được tạo |
+| **Exception Flows** | [E1] Số dư không đủ<br> [E2] Xác thực không hoàn tất |
 
-| **Use Case** | Tạo khoản vay |
+| **Use Case** | Tạo yêu cầu vay |
 |---|---|
 | **Actors** | Người dùng |
-| **Description** | Vay tiền với lãi suất ưu đãi |
+| **Description** | Tạo yêu cầu vay tiền, yêu cầu sẽ được ngân hàng xem xét và đánh giá. Ngân hàng sẽ liên hệ lại và yêu cầu gặp mặt trực tiếp để kiểm tra điều kiện kinh tế, sau đó sẽ quyết định có chấp nhận yêu cầu vay tiền hay không |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Khác**  <br>2. Chọn **Tạo khoản vay**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực<br>4. Sau bkhi tạo, người dùng được chọn cách liên hệ (số điện thoại/chat) và nhân viên sẽ liên hệ để thương lượng về khoản vay và thế chấp<br>5. Nếu được ngân hàng đánh giá là đạt, khoản vay được thông qua và người dùng nhận được tiền |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất<br>3. Khoản vay không được thông qua |
+| **Post-Conditions** | Yêu cầu vay được thực hiện và được hệ thống ghi lại |
+| **Main Flow** | 1. Chọn **Tạo khoản vay**, bấm nút **Tạo khoản gửi tiếp kiệm mới** [A1]<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Yêu cầu vay không được tạo |
+| **Exception Flows** | [E1] Xác thực không hoàn tất |
 
 | **Use Case** | Xem lịch sử giao dịch, sao kê |
 |---|---|
 | **Actors** | Người dùng |
 | **Description** | Xem lịch sử các giao dịch đã tạo, sao kê lại nếu cần |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Khác**  <br>2. Chọn **Lịch sử giao dịch**, người dùng sẽ thấy lịch sử giao dịch<br>3. Nếu cần sao kê, người dùng bấm **Sao kê**, chọn ngày bắt đầu và kết thức để hệ thống tạo sao kê |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Người dùng bấm **Huỷ** hoặc thoát<br>2. Xác thực không hoàn tất |
+| **Post-Conditions** | Yêu cầu sao kê được thực hiện và được hệ thống ghi lại |
+| **Main Flow** | 1. Chọn **Khác**  <br>2. Chọn **Lịch sử giao dịch**, người dùng sẽ thấy lịch sử giao dịch<br>3. Nếu cần sao kê, người dùng bấm **Sao kê**, chọn ngày bắt đầu và kết thức để hệ thống tạo sao kê [A1]<br> 4. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] |
+| **Alternative Flows** | [A1] Người dùng bấm **Hủy**<br> Post-Condition: Yêu cầu sao kê không được thực hiện |
+| **Exception Flows** |  [E1] Xác thực không hoàn tất |
 
 </details>
 
@@ -192,72 +187,82 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Use Case** | Tiếp nhận liên hệ của khách hàng |
 |---|---|
 | **Actors** | Nhân viên |
-| **Description** | Nhân viên sẽ thấy các yêu cầu mà khách hàng gửi đến (chat/cuộc gọi) |
+| **Description** | Nhân viên sẽ thấy các yêu cầu chat mà khách hàng gửi đến. Nhân viên bấm vô khách hàng cần tư vấn để tư vấn |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | Đối với chat, sau khi nhận được yêu cầu chat từ khách hàng<br>1. Chọn khách hàng trong **Danh sách khách hàng đang chờ** được tư vấn<br>2. Sau khi tư vấn, nhân viên chọn **Kết thúc** để kết thúc phiên tư vấn |
+| **Post-Conditions** | Yêu cầu liên hệ của khách hàng được chấp thuận và khách hàng được nhắn trực tiếp với nhân viên, hệ thống sẽ ghi lại hoạt động của nhân viên |
+| **Main Flow** | Đối với chat, sau khi nhận được yêu cầu chat từ khách hàng<br>1. Chọn **Yêu cầu chăm sóc khách hàng** và bấm chọn khách hàng trong **Danh sách khách hàng đang chờ** được tư vấn [E1]<br>2. Sau khi tư vấn, nhân viên chọn **Kết thúc** để kết thúc phiên tư vấn |
 | **Alternative Flows** | Không |
-| **Exception Flows** | Khách hàng/nhân viên thoát ra |
+| **Exception Flows** | [E1] Khi đang tư vấn, khách hàng hủy yêu cầu tư vấn |
 
 | **Use Case** | Xem/sửa thông tin hộ khách hàng |
 |---|---|
 | **Actors** | Nhân viên |
 | **Description** | Nhân viên được xem thông tin của người dùng và các giao dịch; được sửa thông tin của người dùng nếu được người dùng cho phép |
-| **Pre-Conditions** | Đã đăng nhập, (người dùng gửi yêu cầu sửa) |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Thông tin người dùng** để xem thông tin người dùng<br>2. Để chỉnh sửa, chọn **Yêu cầu chỉnh sửa**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực<br>4. Sau khi xác thực hoàn tất, nhân viên được quyền sửa thông tin khách hàng |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Nhân viên thoát ra<br>2. Xác thực không hoàn tất<br>3. Thông tin thay đổi không hợp lệ |
+| **Pre-Conditions** | Đã đăng nhập |
+| **Post-Conditions** | Thông tin của khách hàng được chỉnh sửa bởi nhân viên, hệ thống sẽ ghi hoạt động của nhân viên |
+| **Main Flow** | 1. Chọn **Người dùng** để xem thông tin người dùng<br>2. Để chỉnh sửa, chọn **Yêu cầu chỉnh sửa**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1]<br>4. Sau khi xác thực hoàn tất, nhân viên được quyền sửa thông tin khách hàng, bấm **Chỉnh sửa** [A1][E2]<br> 5. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] |
+| **Alternative Flows** | [A1] Nhân viên bấm **Hủy**<br> Post-Condition: Yêu cầu chỉnh sửa thông tin khách hàng bị hủy |
+| **Exception Flows** | [E1] Xác thực không hoàn tất<br> [E2] Thông tin cá nhân mới không hợp lệ hoặc trùng với thông tin cũ hoặc trùng với thông tin của tài khoản khác trong cơ sở sữ liệu |
 
 | **Use Case** | Nạp tiền cho người dùng |
 |---|---|
 | **Actors** | Nhân viên |
-| **Description** | Nhân viên nhận tiền của người dùng và nạp tiền vô tài khoản cho người dùng |
-| **Pre-Conditions** | Đã đăng nhập, người dùng gửi yêu cầu nạp tiền |
-| **Post-Conditions** | Không |
+| **Description** | Nhân viên nhận tiền của người dùng và nạp tiền vô tài khoản cho người dùng (trực tiếp) |
+| **Pre-Conditions** | Đã đăng nhập |
+| **Post-Conditions** | Tài khoản của khách hàng được nạp tiền, hệ thống sẽ ghi lại giao dịch và hoạt động của nhân viên |
 | **Main Flow** | 1. Chọn **Thông tin người dùng**<br>2. Chọn **Nạp tiền**<br>3. Nhập số tiền cần nạp<br>4. Bấm **Nạp** |
 | **Alternative Flows** | Không |
-| **Exception Flows** | Nhân viên thoát ra |
+| **Exception Flows** | Không |
 
 | **Use Case** | Thanh toán hộ người dùng |
 |---|---|
 | **Actors** | Nhân viên |
 | **Description** | Nhân viên có thể thanh toán hộ người dùng |
-| **Pre-Conditions** | Đã đăng nhập, người dùng gửi yêu cầu thanh toán hộ |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Thông tin người dùng**<br>2. Chọn **Thanh toán hộ**<br>3. Nhân viên kiểm tra thông tin thanh toán với người dùng<br>4. Bấm **Thanh toán**<br>5. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Nhân viên thoát ra<br>2. Số dư không đủ |
+| **Pre-Conditions** | Đã đăng nhập |
+| **Post-Conditions** | Yêu cầu thanh toán của khách hàng được thực hiện, hệ thống sẽ ghi lại giao dịch và hoạt động của nhân viên |
+| **Main Flow** | 1. Chọn **Người dùng**<br>2. Chọn **Thanh toán hộ**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1]<br>4. Sau khi xác thực hoàn tất, nhân viên bấm **Thanh toán** [A1][E2]<br>5. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] |
+| **Alternative Flows** | [A1] Nhân viên bấm **Hủy**<br> Post-Condition: Yêu cầu thanh toán hộ không được thực hiện |
+| **Exception Flows** | [E1] Xác thực không hoàn tất<br> [E2] Số dư không đủ |
 
 | **Use Case** | Gửi tiết kiệm hộ người dùng |
 |---|---|
 | **Actors** | Nhân viên |
 | **Description** | Nhân viên có thể gửi tiết kiệm hộ người dùng |
-| **Pre-Conditions** | Đã đăng nhập, người dùng gửi yêu cầu gửi tiết kiệm hộ |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Thông tin người dùng**<br>2. Chọn **Gửi tiết kiệm hộ**<br>3. Nhân viên kiểm tra thông tin gửi tiết kiệm với với người dùng<br>4. Bấm **Gửi tiết kiệm**<br>5. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | 1. Nhân viên thoát ra<br>2. Số dư không đủ |
+| **Pre-Conditions** | Đã đăng nhập |
+| **Post-Conditions** | Yêu cầu gửi tiết kiệm của khách hàng được thực hiện, hệ thống sẽ ghi lại giao dịch và hoạt động của nhân viên |
+| **Main Flow** | 1. Chọn **Người dùng**<br>2. Chọn **Gửi tiết kiệm hộ**<br>3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1]<br>4. Sau khi xác thực hoàn tất, nhân viên bấm **Gửi tiết kiệm** [A1]<br>5. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] |
+| **Alternative Flows** | [A1] Nhân viên bấm **Hủy**<br> Post-Condition: Yêu cầu gửi tiết kiệm hộ không được thực hiện |
+| **Exception Flows** | [E1] Xác thực không hoàn tất<br> [E2] Số dư không đủ |
 
-| **Use Case** | Tạo khoản vay cho người dùng |
+| **Use Case** | Tạo yêu cầu vay cho người dùng |
 |---|---|
 | **Actors** | Nhân viên |
-| **Description** | Nhân viên nhận khoản vay của người dùng, kiểm tra và chấp nhận khoản vay hoặc không |
-| **Pre-Conditions** | Đã đăng nhập, người dùng tạo khoản vay |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Vay**<br>2. Chọn yêu cầu vay của người dùng<br>3. Liên hệ với người dùng và kiểm tra các điều kiện<br>4. Đánh giá các điều kiện<br>5. Chấp nhận yêu cầu cho vay hoặc huỷ yêu cầu |
-| **Alternative Flows** | Không |
-| **Exception Flows** | Nhân viên huỷ yêu cầu |
+| **Description** | Nhân viên tạo yêu cầu vay cho người dùng |
+| **Pre-Conditions** | Đã đăng nhập |
+| **Post-Conditions** | Yêu cầu vay của khách hàng được tạo, hệ thống sẽ ghi lại hoạt động của nhân viên |
+| **Main Flow** | 1. Chọn **Người dùng**<br>2. Chọn **Tạo yêu cầu vay hộ**<br> 3. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1]<br> 4. Nhập thông tin, bấm **Tạo** [A1]<br> 5. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực [E1] |
+| **Alternative Flows** | [A1] Nhân viên bấm hủy<br> Post-Condition: Yêu cầu vay không được tạo |
+| **Exception Flows** | [E1] Xác thực không hoàn tất |
+
+| **Use Case** | Xem xét yêu cầu vay của người dùng |
+|---|---|
+| **Actors** | Nhân viên |
+| **Description** | Nhân viên sau khi đánh giá tình trạng kinh tế của người dùng có thể chấp nhận hoặc từ chối yêu cầu vay, nếu chấp nhận, tiền sẽ được chuyển tự động theo lịch |
+| **Pre-Conditions** | Đã đăng nhập, Yêu cầu vay của khách hàng đã được tạo |
+| **Post-Conditions** | Yêu cầu vay của khách hàng được thay đổi trạng thái thành chấp thuận hoặc từ chối. Sau khi đổi trạng thái, yêu cầu vay biến mất ở **Yêu cầu vay** và xuất hiện ở **Các khoản vay**. Hệ thống sẽ ghi lại hoạt động của nhân viên |
+| **Main Flow** | 1. Chọn **Vay**<br> 2. Chọn **Yêu cầu vay**<br>3. Chọn yêu cầu vay của khách hàng<br> 4. Thay đổi trạng thái của yêu cầu vay (chấp thuận/từ chối) [A1] |
+| **Alternative Flows** | [A1] Nhân viên bấm **Hủy**<br> Post-Condition: Yêu cầu vay được giữ nguyên trạng thái |
+| **Exception Flows** | Không |
 
 | **Use Case** | Xem lịch sử giao dịch/sao kê hộ người dùng |
 |---|---|
 | **Actors** | Nhân viên |
 | **Description** | Nhân viên được xem/sao kê lịch sử giao dịch của người dùng nếu được phép |
-| **Pre-Conditions** | Đã đăng nhập, người dùng gửi yêu cầu sao kê hộ |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Thông tin người dùng**<br>2. Chọn **Lịch sử giao dịch**<br>3. Bấm **Sao kê**, chọn ngày bắt đầu và ngày kết thúc<br>4. Hệ thống sẽ gửi yêu cầu xác thực, người dùng xác thực |
-| **Alternative Flows** | Không |
-| **Exception Flows** | Nhân viên thoát ra |
+| **Pre-Conditions** | Đã đăng nhập |
+| **Post-Conditions** | Yêu cầu sao kê của khách hàng được tạo, hệ thống sẽ ghi lại hoạt động của nhân viên |
+| **Main Flow** | 1. Chọn **Thông tin người dùng**<br>2. Chọn **Lịch sử giao dịch**<br>3. Bấm **Sao kê**, chọn ngày bắt đầu và ngày kết thúc, bấm **Tạo** [A1] |
+| **Alternative Flows** | [A1] Nhân viên bấm **Hủy**<br> Post-Condition: Yêu cầu sao kê không được thực hiện|
+| **Exception Flows** | Không |
 
 </details>
 
@@ -270,12 +275,12 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Actors** | Chủ |
 | **Description** | Chủ được toàn quyền xem/sửa thông tin của nhân viên |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Nhân viên**<br>2. Chọn nhân viên cần xem/sửa và xem/sửa |
-| **Alternative Flows** | Không |
-| **Exception Flows** | Chủ bấm **Huỷ** hoặc thoát |
+| **Post-Conditions** | Thông tin của nhân viên được thay đổi trên hệ thống |
+| **Main Flow** | 1. Chọn **Nhân viên**<br>2. Chọn nhân viên cần xem/sửa và xem/sửa [A1] |
+| **Alternative Flows** | [A1] Chủ bấm **Hủy** |
+| **Exception Flows** | Không |
 
-| **Use Case** | Quản lý nhân viên |
+| **Use Case** | Quản lý người dùng |
 |---|---|
 | **Actors** | Chủ |
 | **Description** | Chủ được toàn quyền xem thông tin của người dùng |
@@ -285,24 +290,14 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Alternative Flows** | Không |
 | **Exception Flows** | Không |
 
-| **Use Case** | Xem các lịch sử giao dịch |
-|---|---|
-| **Actors** | Chủ |
-| **Description** | Chủ được toàn quyền xem mọi lịch sử giao dịch |
-| **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | Chọn **Lịch sử giao dịch**<br> |
-| **Alternative Flows** | Không |
-| **Exception Flows** | Không |
-
 | **Use Case** | Chỉnh sửa các thông tin về lãi suất |
 |---|---|
 | **Actors** | Chủ |
 | **Description** | Chủ được toàn quyền sửa các loại lãi suất của ngân hàng |
 | **Pre-Conditions** | Đã đăng nhập |
-| **Post-Conditions** | Không |
-| **Main Flow** | 1. Chọn **Hệ thống ngân hàng**<br>2. Chọn **Lãi suất** và sửa |
-| **Alternative Flows** | Không |
+| **Post-Conditions** | Thông tin về lãi suất bị thay đổi, hệ thống sẽ ghi lại |
+| **Main Flow** | 1. Chọn **Hệ thống ngân hàng**<br>2. Chọn **Lãi suất**<br> 3. Sau khi sửa bấm **Lưu** [A1] |
+| **Alternative Flows** | [A1] Chủ bấm **Hủy** |
 | **Exception Flows** | Không |
 
 </details>
