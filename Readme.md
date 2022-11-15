@@ -114,9 +114,9 @@ Trong quá trình phát triển của xã hội loài người, khi sản xuất
 | **Description** | Người dùng đăng xuất |
 | **Pre-Conditions** | Đã đăng nhập |
 | **Post-Conditions** | Hệ thống hủy phiên đăng nhập của người dùng và người dùng không còn trong trạng thái đăng nhập nữa |
-| **Main Flow** | 1. Bám vào biểu tượng tài khoản<br>2. Chọn **Đăng xuất** <br>3. Bấm **Xác nhận** [E1]  |
-| **Alternative Flows** | Không |
-| **Exception Flows** | [E1] Người dùng bấm **Huỷ** |
+| **Main Flow** | 1. Bám vào biểu tượng tài khoản<br>2. Chọn **Đăng xuất** <br>3. Bấm **Xác nhận** [A1]  |
+| **Alternative Flows** | [A1] Người dùng bấm **Huỷ**<br> Post-Condition: Không đăng xuất và quay về trang chủ |
+| **Exception Flows** | Không |
 
 | **Use Case** | Xem/sửa thông tin cá nhân |
 |---|---|
